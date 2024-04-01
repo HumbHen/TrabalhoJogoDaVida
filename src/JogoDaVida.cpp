@@ -99,18 +99,18 @@ void JogoDaVida::iniciarJogo(int **tabuleiro, int interacao, ManipulandoArquivo 
                     if(quantidade < 2)
                     {
                         sub_tabuleiro[i][j]= 0;
-                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] morre por solidão\n");
+                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] Morre por solidão\n");
                     }
                    //morre por superlotacao
                     else if( quantidade > 3)
                     {
                         sub_tabuleiro[i][j]= 0;
-                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] morre por superlotação\n");
+                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] Morre por superlotação\n");
                     }
                     // com 2 ou 3 vizinhos vive
                     else{
                         sub_tabuleiro[i][j]= 1;
-                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] continua vivendo\n");
+                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] Vive\n");
                     }
                 }
                 else{
@@ -118,18 +118,16 @@ void JogoDaVida::iniciarJogo(int **tabuleiro, int interacao, ManipulandoArquivo 
                     if(quantidade == 3)
                     {
                         sub_tabuleiro[i][j]= 1;
-                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] vive por reprodução\n");
+                        relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] Vive por reprodução\n");
                     }
                     else
                     {
                         sub_tabuleiro[i][j]= 0;
-                        //relatorio(sub_tabuleiro, tamanho, arquivo, "Posição [" + to_string(i) + " - " + to_string(j) + "] continua morta\n");
                     }
                 }
             }
         }
 
-        // passar os dados de sub_tabuleiro -> tabuleiro e verificar se sao iguais 
         if(checarIgualdade(tabuleiro, sub_tabuleiro, tamanho))
         {
             relatorio(tabuleiro, tamanho, arquivo,"O tabuleiro atual é igual a ao tabuleiro da interação anterior\n");
@@ -147,7 +145,7 @@ void JogoDaVida::iniciarJogo(int **tabuleiro, int interacao, ManipulandoArquivo 
         relatorio(tabuleiro, tamanho, arquivo, to_string(aux_de_interacao )+"° Interação: \n", true);
 
     }
-    relatorio(tabuleiro, tamanho, arquivo,"Encerrando jogo...\nMonstrando a ultima interação obtida", true);
+    relatorio(tabuleiro, tamanho, arquivo,"Encerrando jogo...\nMonstrando a ultima interação obtida\n", true);
 
     delete sub_tabuleiro;
 }

@@ -3,7 +3,7 @@
 ManipulandoArquivo::ManipulandoArquivo(){}
 
 void ManipulandoArquivo::setInputArquivo(string input_arquivo){
-    this->input_arquivo = input_arquivo;
+    this->input_arquivo = "programa/input.mps";
 }
 
 void ManipulandoArquivo::setOutputArquivo(string output_arquivo){
